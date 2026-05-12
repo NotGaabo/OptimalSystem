@@ -1045,7 +1045,6 @@ nav.scrolled .hamburger span { background: var(--ink); }
 .s-cta {
   background: var(--ink);
   padding: 8rem 5%;
-  text-align: center;
   position: relative;
   overflow: hidden;
 }
@@ -1062,9 +1061,18 @@ nav.scrolled .hamburger span { background: var(--ink); }
   background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 36px 36px;
 }
-.cta-inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
-.cta-inner .hero-badge { margin: 0 auto 2rem; }
-.cta-inner h2 {
+.cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: 2rem;
+  align-items: start;
+}
+.contact-intro .hero-badge { margin: 0 0 1.6rem; }
+.contact-intro h2 {
   font-family: 'Fraunces', serif;
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 900;
@@ -1073,9 +1081,307 @@ nav.scrolled .hamburger span { background: var(--ink); }
   line-height: 1.06;
   margin-bottom: 1rem;
 }
-.cta-inner h2 em { font-style: italic; color: var(--accent); }
-.cta-inner p { font-size: 1rem; color: rgba(255,255,255,0.45); margin-bottom: 2.5rem; line-height: 1.7; }
-.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.contact-intro h2 em { font-style: italic; color: var(--accent); }
+.contact-intro p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.52);
+  margin-bottom: 2rem;
+  line-height: 1.78;
+  max-width: 520px;
+}
+.contact-points {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 1.6rem;
+}
+.contact-point {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+}
+.contact-point strong {
+  display: block;
+  font-size: 0.92rem;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+.contact-point span {
+  display: block;
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.6;
+}
+.contact-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.contact-panel {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 26px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.28);
+}
+.contact-panel-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+.panel-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+}
+.panel-kicker::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+.contact-panel h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.45rem;
+}
+.contact-panel p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.65;
+}
+.contact-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 330px;
+}
+.summary-pill {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 0.8rem;
+}
+.summary-pill strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  color: white;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.summary-pill span {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.4;
+}
+.contact-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.contact-tab {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.contact-tab:hover,
+.contact-tab.active {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
+.contact-form {
+  display: none;
+}
+.contact-form.active {
+  display: block;
+}
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(12,14,18,0.55);
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 1rem;
+}
+.chat-bubble {
+  max-width: 88%;
+  border-radius: 18px;
+  padding: 0.85rem 1rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+.chat-bubble.inbound {
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.78);
+}
+.chat-bubble.outbound {
+  background: rgba(0,229,195,0.14);
+  color: var(--accent);
+  align-self: flex-end;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field-full {
+  grid-column: 1 / -1;
+}
+.field label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.72);
+  font-weight: 600;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(255,255,255,0.28);
+}
+.field select {
+  appearance: none;
+}
+.field select option {
+  color: var(--ink);
+}
+.field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: rgba(45,111,255,0.8);
+  box-shadow: 0 0 0 4px rgba(45,111,255,0.14);
+  background: rgba(255,255,255,0.07);
+}
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0 1.2rem;
+}
+.quick-action {
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.74);
+  border-radius: 999px;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.quick-action:hover {
+  border-color: rgba(0,229,195,0.4);
+  color: white;
+}
+.feature-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.feature-picks label {
+  position: relative;
+}
+.feature-picks input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.feature-picks span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.68);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.feature-picks input:checked + span {
+  background: rgba(45,111,255,0.18);
+  border-color: rgba(45,111,255,0.7);
+  color: white;
+}
+.form-note {
+  margin-top: 1rem;
+  font-size: 0.77rem;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.6;
+}
+.form-status {
+  min-height: 1.4rem;
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.52);
+}
+.form-status.is-success {
+  color: var(--accent);
+}
+.form-status.is-error {
+  color: #FF9C9C;
+}
+.submit-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+.btn-submit {
+  border: 0;
+  cursor: pointer;
+}
+.btn-submit[disabled] {
+  opacity: 0.7;
+  cursor: wait;
+}
 
 /* ──────────────── FOOTER ──────────────── */
 footer {
@@ -1178,6 +1484,8 @@ footer {
   .test-grid { grid-template-columns: 1fr; }
   .process-timeline { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
   .process-timeline::before { display: none; }
+  .cta-inner { grid-template-columns: 1fr; }
+  .contact-summary { max-width: none; }
 }
 
 @media (max-width: 768px) {
@@ -1189,6 +1497,8 @@ footer {
   .process-timeline { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
+  .contact-panel-top { flex-direction: column; }
+  .contact-summary { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 @media (max-width: 540px) {
@@ -1197,6 +1507,8 @@ footer {
   .hero-trust { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .trust-divider { display: none; }
   .footer-top { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .contact-summary { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -1238,10 +1550,6 @@ footer {
 
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-badge">
-        <div class="badge-dot"></div>
-        Soluciones para PYMES
-      </div>
       <h1 class="hero-h1">
         De procesos<br><em>manuales</em> a<br>sistemas inteligentes
       </h1>
@@ -1770,16 +2078,184 @@ footer {
 <section class="s-cta" id="contacto">
   <div class="cta-bg"></div>
   <div class="cta-dots"></div>
-  <div class="cta-inner reveal">
-    <div class="hero-badge" style="animation:none;opacity:1;margin:0 auto 2rem">
-      <div class="badge-dot"></div>
-      ¿Listo para crecer?
+  <div class="cta-inner">
+    <div class="contact-intro reveal">
+      <div class="hero-badge" style="animation:none;opacity:1">
+        <div class="badge-dot"></div>
+        Contacto y cotización
+      </div>
+      <h2>Habla con nosotros desde la web y recibe respuesta en <em>tu correo</em></h2>
+      <p>Convertimos esta sección en un centro de contacto real: los mensajes y solicitudes de proyecto salen desde la web, llegan a <strong style="color:white;font-weight:700">systemsoptimal@gmail.com</strong> y quedan listos para responder desde Gmail al cliente.</p>
+      <div class="contact-points">
+        <div class="contact-point">
+          <strong>Mensaje rápido estilo chat</strong>
+          <span>Ideal para una primera conversación, dudas comerciales o una consulta breve antes de cotizar.</span>
+        </div>
+        <div class="contact-point">
+          <strong>Cotización con detalles del proyecto</strong>
+          <span>Recoge presupuesto, tiempos, funcionalidades y contexto del negocio en la misma landing.</span>
+        </div>
+        <div class="contact-point">
+          <strong>Respuesta desde Gmail</strong>
+          <span>El formulario guarda el correo del cliente como `reply-to`, así puedes contestar directamente desde tu bandeja.</span>
+        </div>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:systemsoptimal@gmail.com" class="btn-primary">Escribir al correo →</a>
+        <a href="tel:+18091234567" class="btn-outline">+1 (809) 123-4567</a>
+      </div>
     </div>
-    <h2>Moderniza tu negocio con soluciones<br>tecnológicas <em>reales</em></h2>
-    <p>Deja atrás los procesos manuales. Lleva tu empresa al siguiente nivel con sistemas diseñados específicamente para ti, con soporte real y resultados medibles.</p>
-    <div class="cta-btns">
-      <a href="mailto:contacto@optimalsoftware.com" class="btn-primary">Solicitar una consulta →</a>
-      <a href="tel:+18091234567" class="btn-outline">+1 (809) 123-4567</a>
+    <div class="contact-panel reveal">
+      <div class="contact-panel-top">
+        <div>
+          <span class="panel-kicker">Centro de contacto</span>
+          <h3>Una sola sección para conversar y cotizar</h3>
+          <p>Elige si quieres abrir una conversación corta o mandar una solicitud completa de proyecto. Todo se procesa con JavaScript y una función serverless de Vercel.</p>
+        </div>
+        <div class="contact-summary">
+          <div class="summary-pill">
+            <strong>2</strong>
+            <span>flujos listos para leads</span>
+          </div>
+          <div class="summary-pill">
+            <strong>1</strong>
+            <span>correo centralizado en Gmail</span>
+          </div>
+          <div class="summary-pill">
+            <strong>JS</strong>
+            <span>compatible con Vercel</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-tabs">
+        <button class="contact-tab active" type="button" data-target="quick-message-form">Mensaje rápido</button>
+        <button class="contact-tab" type="button" data-target="project-quote-form">Cotización y proyecto</button>
+      </div>
+
+      <form id="quick-message-form" class="contact-form active" data-contact-form data-form-type="mensaje">
+        <div class="chat-window" id="chat-window">
+          <div class="chat-bubble inbound">Hola. Cuéntanos qué necesitas y te responderemos desde Gmail al correo que dejes aquí.</div>
+          <div class="chat-bubble inbound">Si todavía no tienes todo definido, puedes comenzar por una consulta rápida.</div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="quick-name">Nombre</label>
+            <input id="quick-name" name="name" type="text" placeholder="Tu nombre" required>
+          </div>
+          <div class="field">
+            <label for="quick-email">Correo</label>
+            <input id="quick-email" name="email" type="email" placeholder="cliente@empresa.com" required>
+          </div>
+          <div class="field">
+            <label for="quick-company">Empresa</label>
+            <input id="quick-company" name="company" type="text" placeholder="Nombre de tu negocio">
+          </div>
+          <div class="field">
+            <label for="quick-phone">WhatsApp o teléfono</label>
+            <input id="quick-phone" name="phone" type="text" placeholder="+1 809 000 0000">
+          </div>
+          <div class="field field-full">
+            <label for="quick-message">Mensaje</label>
+            <textarea id="quick-message" name="message" placeholder="Quiero una web, automatizar un proceso o conversar sobre una idea..." required></textarea>
+          </div>
+        </div>
+        <div class="quick-actions">
+          <button class="quick-action" type="button" data-message="Quiero una página web profesional para mi negocio.">Web para negocio</button>
+          <button class="quick-action" type="button" data-message="Necesito automatizar tareas manuales dentro de mi empresa.">Automatización</button>
+          <button class="quick-action" type="button" data-message="Quiero un sistema interno con usuarios, panel y reportes.">Sistema interno</button>
+          <button class="quick-action" type="button" data-message="Necesito hablar con alguien para evaluar si mi idea es viable.">Evaluación de idea</button>
+        </div>
+        <div class="submit-row">
+          <button class="btn-primary btn-submit" type="submit">Enviar mensaje →</button>
+          <span class="form-note">Este mensaje llega a systemsoptimal@gmail.com y el cliente recibe confirmación automática.</span>
+        </div>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+
+      <form id="project-quote-form" class="contact-form" data-contact-form data-form-type="cotizacion">
+        <div class="form-grid">
+          <div class="field">
+            <label for="quote-name">Nombre</label>
+            <input id="quote-name" name="name" type="text" placeholder="Tu nombre" required>
+          </div>
+          <div class="field">
+            <label for="quote-email">Correo</label>
+            <input id="quote-email" name="email" type="email" placeholder="cliente@empresa.com" required>
+          </div>
+          <div class="field">
+            <label for="quote-company">Empresa</label>
+            <input id="quote-company" name="company" type="text" placeholder="Nombre de la empresa" required>
+          </div>
+          <div class="field">
+            <label for="quote-phone">Teléfono</label>
+            <input id="quote-phone" name="phone" type="text" placeholder="+1 809 000 0000">
+          </div>
+          <div class="field">
+            <label for="quote-type">Tipo de proyecto</label>
+            <select id="quote-type" name="projectType" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Sitio web corporativo">Sitio web corporativo</option>
+              <option value="Sistema interno">Sistema interno</option>
+              <option value="Automatizacion">Automatización</option>
+              <option value="App web o dashboard">App web o dashboard</option>
+              <option value="App movil">App móvil</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quote-budget">Presupuesto estimado</label>
+            <select id="quote-budget" name="budget" required>
+              <option value="">Selecciona un rango</option>
+              <option value="Menos de 500 USD">Menos de 500 USD</option>
+              <option value="500 a 1,500 USD">500 a 1,500 USD</option>
+              <option value="1,500 a 5,000 USD">1,500 a 5,000 USD</option>
+              <option value="5,000 USD o mas">5,000 USD o más</option>
+              <option value="Necesito asesoria primero">Necesito asesoría primero</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quote-timeline">Plazo ideal</label>
+            <select id="quote-timeline" name="timeline" required>
+              <option value="">Selecciona un plazo</option>
+              <option value="Lo antes posible">Lo antes posible</option>
+              <option value="Este mes">Este mes</option>
+              <option value="1 a 3 meses">1 a 3 meses</option>
+              <option value="Mas de 3 meses">Más de 3 meses</option>
+              <option value="Solo quiero cotizar">Solo quiero cotizar</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quote-industry">Sector o negocio</label>
+            <input id="quote-industry" name="industry" type="text" placeholder="Retail, clínica, ferretería, residencial..." required>
+          </div>
+          <div class="field field-full">
+            <label>Funciones que te interesan</label>
+            <div class="feature-picks">
+              <label><input type="checkbox" name="features" value="Panel administrativo"><span>Panel administrativo</span></label>
+              <label><input type="checkbox" name="features" value="Usuarios y roles"><span>Usuarios y roles</span></label>
+              <label><input type="checkbox" name="features" value="Integracion con WhatsApp"><span>Integración con WhatsApp</span></label>
+              <label><input type="checkbox" name="features" value="Pagos en linea"><span>Pagos en línea</span></label>
+              <label><input type="checkbox" name="features" value="Reportes y metricas"><span>Reportes y métricas</span></label>
+              <label><input type="checkbox" name="features" value="Automatizacion de tareas"><span>Automatización de tareas</span></label>
+              <label><input type="checkbox" name="features" value="Formulario de clientes"><span>Formulario de clientes</span></label>
+              <label><input type="checkbox" name="features" value="Base de datos"><span>Base de datos</span></label>
+            </div>
+          </div>
+          <div class="field field-full">
+            <label for="quote-goals">Objetivo del proyecto</label>
+            <textarea id="quote-goals" name="goals" placeholder="¿Qué problema quieres resolver y qué resultado esperas?" required></textarea>
+          </div>
+          <div class="field field-full">
+            <label for="quote-details">Detalles adicionales</label>
+            <textarea id="quote-details" name="message" placeholder="Describe procesos actuales, referencias, usuarios que lo usarán o cualquier detalle importante." required></textarea>
+          </div>
+        </div>
+        <div class="submit-row">
+          <button class="btn-primary btn-submit" type="submit">Solicitar cotización →</button>
+          <span class="form-note">Recibirás un correo de confirmación y nosotros podremos responderte desde Gmail con contexto completo.</span>
+        </div>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </section>
@@ -1818,7 +2294,7 @@ footer {
     <div class="footer-col">
       <h4>Contacto</h4>
       <ul>
-        <li><a href="mailto:contacto@optimalsoftware.com">contacto@optimalsoftware.com</a></li>
+        <li><a href="mailto:systemsoptimal@gmail.com">systemsoptimal@gmail.com</a></li>
         <li><a href="tel:+18091234567">+1 (809) 123-4567</a></li>
         <li><a href="#">Santo Domingo, DO</a></li>
       </ul>
@@ -1877,10 +2353,124 @@ const barObs = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.results-card').forEach(el => barObs.observe(el));
 
+/* ── Contact tabs ── */
+const contactTabs = document.querySelectorAll('.contact-tab');
+const contactForms = document.querySelectorAll('.contact-form');
+
+contactTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const targetId = tab.dataset.target;
+    contactTabs.forEach(btn => btn.classList.toggle('active', btn === tab));
+    contactForms.forEach(form => form.classList.toggle('active', form.id === targetId));
+  });
+});
+
+/* ── Quick prompts ── */
+const quickMessageField = document.getElementById('quick-message');
+const chatWindow = document.getElementById('chat-window');
+
+document.querySelectorAll('.quick-action').forEach(action => {
+  action.addEventListener('click', () => {
+    const suggestion = action.dataset.message || '';
+    quickMessageField.value = suggestion;
+    quickMessageField.focus();
+    quickMessageField.setSelectionRange(quickMessageField.value.length, quickMessageField.value.length);
+  });
+});
+
+function setFormStatus(form, text, state = '') {
+  const status = form.querySelector('.form-status');
+  status.textContent = text;
+  status.className = `form-status${state ? ` is-${state}` : ''}`;
+}
+
+function appendChatBubble(text) {
+  const bubble = document.createElement('div');
+  bubble.className = 'chat-bubble outbound';
+  bubble.textContent = text;
+  chatWindow.appendChild(bubble);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+async function handleContactSubmit(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  if ((window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') && window.location.port === '5500') {
+    setFormStatus(
+      form,
+      'Estás abriendo la web con Live Server en 127.0.0.1:5500. Ese servidor no ejecuta funciones de Vercel. Prueba con "vercel dev" o usa tu dominio desplegado.',
+      'error'
+    );
+    return;
+  }
+
+  const formData = new FormData(form);
+  const payload = {
+    formType: form.dataset.formType,
+    name: (formData.get('name') || '').toString().trim(),
+    email: (formData.get('email') || '').toString().trim(),
+    company: (formData.get('company') || '').toString().trim(),
+    phone: (formData.get('phone') || '').toString().trim(),
+    message: (formData.get('message') || '').toString().trim(),
+    projectType: (formData.get('projectType') || '').toString().trim(),
+    budget: (formData.get('budget') || '').toString().trim(),
+    timeline: (formData.get('timeline') || '').toString().trim(),
+    industry: (formData.get('industry') || '').toString().trim(),
+    goals: (formData.get('goals') || '').toString().trim(),
+    features: formData.getAll('features'),
+    source: window.location.href
+  };
+
+  if (!payload.name || !payload.email || !payload.message) {
+    setFormStatus(form, 'Completa los campos obligatorios antes de enviar.', 'error');
+    return;
+  }
+
+  submitButton.disabled = true;
+  const originalText = submitButton.textContent;
+  submitButton.textContent = 'Enviando...';
+  setFormStatus(form, 'Estamos enviando tu mensaje...');
+
+  try {
+    const response = await fetch('/api/send-contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      throw new Error(result.error || 'No se pudo enviar el formulario.');
+    }
+
+    if (form.id === 'quick-message-form') {
+      appendChatBubble(payload.message);
+    }
+
+    form.reset();
+    setFormStatus(form, 'Mensaje enviado correctamente. Revisa tu correo: también te enviamos una confirmación.', 'success');
+  } catch (error) {
+    setFormStatus(form, error.message || 'Ocurrió un problema al enviar. Intenta otra vez.', 'error');
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = originalText;
+  }
+}
+
+document.querySelectorAll('[data-contact-form]').forEach(form => {
+  form.addEventListener('submit', handleContactSubmit);
+});
+
 /* ── Smooth scroll ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    const t = document.querySelector(href);
     if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
