@@ -1,0 +1,101 @@
+{
+  "projects": [
+    {
+      "id": "smartops",
+      "name": "SmartOps",
+      "tagline": "Infraestructura inteligente, control total",
+      "description": "Plataforma completa para gestionar proyectos de automatización inteligente, dispositivos, tareas y operaciones con control de acceso por roles. Diseñada para equipos que operan infraestructura smart.",
+      "icon": "⚡",
+      "color": "#2D6FFF",
+      "colorGlow": "rgba(45,111,255,0.25)",
+      "tags": [
+        "Automatización",
+        "RBAC",
+        "IoT"
+      ],
+      "tagColors": [
+        "blue",
+        "dark",
+        "dark"
+      ],
+      "tech": [
+        "React",
+        "Node.js",
+        "RBAC"
+      ],
+      "github": "https://github.com/brxnzy/SmartOps",
+      "logo": "uploads/logos/smartops/smartops.png",
+      "images": [
+        "uploads/smartops/1.png",
+        "uploads/smartops/2.png",
+        "uploads/smartops/3.png",
+        "uploads/smartops/4.png",
+        "uploads/smartops/5.png"
+      ]
+    },
+    {
+      "id": "billnova",
+      "name": "BillNova",
+      "tagline": "Gestión empresarial centralizada y accesible",
+      "description": "Plataforma para la gestión empresarial de forma fácil y organizada. Centraliza contabilidad, inventario, ventas, compras, facturación y administración en un solo sistema accesible para todo el equipo.",
+      "icon": "🏘️",
+      "color": "#3458ae",
+      "colorGlow": "rgba(52,88,174,0.25)",
+      "tags": [
+        "Gestión empresarial",
+        "Contabilidad"
+      ],
+      "tagColors": [
+        "green",
+        "dark"
+      ],
+      "tech": [
+        "Web App",
+        "Dashboard",
+        "Notificaciones"
+      ],
+      "github": "https://github.com/brxnzy/Urbane",
+      "logo": "uploads/logos/billnova/IMG-20260512-WA0047-removebg-preview.png",
+      "images": [
+        "uploads/billnova/Screenshot 2026-05-12 231059.png",
+        "uploads/billnova/Screenshot 2026-05-12 231154.png",
+        "uploads/billnova/Screenshot 2026-05-12 231257.png",
+        "uploads/billnova/Screenshot 2026-05-12 231323.png",
+        "uploads/billnova/Screenshot 2026-05-12 231504.png"
+      ]
+    },
+    {
+      "id": "schooltime",
+      "name": "SchoolTime",
+      "tagline": "Administración educativa sin fricciones",
+      "description": "Sistema web para la gestión de horarios, asistencia y comunicaciones en instituciones educativas. Facilita la administración de estudiantes, docentes y actividades escolares.",
+      "icon": "🎓",
+      "color": "#2768F7",
+      "colorGlow": "rgba(39,104,247,0.25)",
+      "tags": [
+        "Web App",
+        "Educación",
+        "Gestión"
+      ],
+      "tagColors": [
+        "purple",
+        "dark",
+        "dark"
+      ],
+      "tech": [
+        "Generación Automática",
+        "Asistencia",
+        "Comunicaciones"
+      ],
+      "github": "https://github.com/NotGaabo/U-Park",
+      "logo": "uploads/logos/schooltime/IMG-20260422-WA0003-removebg-preview.png",
+      "images": [
+        "uploads/schooltime/Screenshot 2026-05-12 230913.png",
+        "uploads/schooltime/Screenshot 2026-05-12 231148.png",
+        "uploads/schooltime/Screenshot 2026-05-12 231207.png",
+        "uploads/schooltime/Screenshot 2026-05-12 231229.png",
+        "uploads/schooltime/Screenshot 2026-05-12 231321.png"
+      ]
+    }
+  ]
+}

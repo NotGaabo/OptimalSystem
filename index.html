@@ -519,12 +519,11 @@ nav.scrolled .hamburger span { background: var(--ink); }
   font-family: 'Fraunces', serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 900;
-  color: var(--ink);
   letter-spacing: -0.04em;
   line-height: 1.1;
   margin-bottom: 1rem;
 }
-.section-p { font-size: 0.95rem; color: var(--gray-3); line-height: 1.75; max-width: 520px; margin-bottom: 2.5rem; }
+.section-p { font-size: 0.95rem; color: var(--gray-3); line-height: 1.75;  max-width: 520px; margin-bottom: 2.5rem; }
 
 .problems-layout {
   display: grid;
@@ -630,6 +629,11 @@ nav.scrolled .hamburger span { background: var(--ink); }
 .svc-card:nth-child(3) h3, .svc-card:nth-child(3) p { color: rgba(255,255,255,0.85); }
 .svc-card:nth-child(3) h3 { color: white; }
 .svc-card:nth-child(3):hover { border-color: var(--blue); }
+.svc-card:nth-child(1) { background: var(--ink); border-color: var(--ink); }
+.svc-card:nth-child(1) h3, .svc-card:nth-child(3) p { color: rgba(255,255,255,0.85); }
+.svc-card:nth-child(1) h3 { color: white; }
+.svc-card:nth-child(1):hover { border-color: var(--blue); }
+
 
 .svc-number {
   font-family: 'Fraunces', serif;
@@ -644,6 +648,8 @@ nav.scrolled .hamburger span { background: var(--ink); }
 .svc-card:hover .svc-number { color: var(--blue-tint); }
 .svc-card:nth-child(3) .svc-number { color: rgba(255,255,255,0.07); }
 .svc-card:nth-child(3):hover .svc-number { color: rgba(45,111,255,0.2); }
+.svc-card:nth-child(1) .svc-number { color: rgba(255,255,255,0.07); }
+.svc-card:nth-child(1):hover .svc-number { color: rgba(45,111,255,0.2); }
 
 .svc-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
 .svc-card h3 {
@@ -666,6 +672,8 @@ nav.scrolled .hamburger span { background: var(--ink); }
   letter-spacing: 0.02em;
 }
 .svc-card:nth-child(3) .svc-tag { background: rgba(45,111,255,0.15); color: #7EB3FF; }
+
+.svc-card:nth-child(1) .svc-tag { background: rgba(45,111,255,0.15); color: #7EB3FF; }
 
 /* ──────────────── PORTFOLIO ──────────────── */
 .s-portfolio {
@@ -957,17 +965,17 @@ nav.scrolled .hamburger span { background: var(--ink); }
   transition: all 0.25s;
   position: relative;
 }
-.test-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.07); transform: translateY(-3px); }
+/* .test-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.07); transform: translateY(-3px); }
 .test-card:first-child {
   background: var(--ink);
   border-color: var(--ink);
   grid-column: span 1;
-}
+} */
 .quote-icon { font-size: 2.5rem; line-height: 1; margin-bottom: 0.75rem; color: var(--blue); opacity: 0.3; font-family: Georgia, serif; }
-.test-card:first-child .quote-icon { color: var(--accent); }
+/* .test-card:first-child .quote-icon { color: var(--accent); } */
 .test-stars { color: #FBB030; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 0.9rem; }
 .test-text { font-size: 0.87rem; color: var(--gray-4); line-height: 1.75; margin-bottom: 1.5rem; font-style: italic; }
-.test-card:first-child .test-text { color: rgba(255,255,255,0.7); }
+/* .test-card:first-child .test-text { color: rgba(255,255,255,0.7); } */
 .test-author { display: flex; align-items: center; gap: 10px; }
 .avatar-circle {
   width: 40px; height: 40px;
@@ -982,9 +990,9 @@ nav.scrolled .hamburger span { background: var(--ink); }
   color: var(--blue);
   flex-shrink: 0;
 }
-.test-card:first-child .avatar-circle { background: rgba(45,111,255,0.2); color: #7EB3FF; }
+/* .test-card:first-child .avatar-circle { background: rgba(45,111,255,0.2); color: #7EB3FF; } */
 .author-nm { font-size: 0.87rem; font-weight: 700; color: var(--ink); }
-.test-card:first-child .author-nm { color: white; }
+/* .test-card:first-child .author-nm { color: white; } */
 .author-rl { font-size: 0.76rem; color: var(--gray-3); }
 
 /* ──────────────── FAQ ──────────────── */
@@ -1516,7 +1524,7 @@ footer {
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#" class="nav-logo">Optimal<span class="accent">.</span>Software</a>
+  <a href="#" class="nav-logo">Optimal<span class="accent">.</span>Systems</a>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#portafolio">Portafolio</a></li>
@@ -1783,120 +1791,627 @@ footer {
     </div>
   </div>
 </section>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  PORTFOLIO SECTION — OptimalSystem                          ║
+  ║  Logos leídos desde p.logo (generado por generate-projects) ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
 
-<!-- ── PORTFOLIO ── -->
+<style>
+  /* ════════════════════════════════════════
+     PORTFOLIO WRAPPER
+  ════════════════════════════════════════ */
+  .s-portfolio {
+    position: relative;
+    padding: 100px 0 120px;
+    overflow: hidden;
+  }
+
+  .s-portfolio::before {
+    content: '';
+    position: absolute;
+    top: 10%; left: 50%;
+    transform: translateX(-50%);
+    width: 900px; height: 600px;
+    background: radial-gradient(ellipse, rgba(45,111,255,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ════════════════════════════════════════
+     HEADER
+  ════════════════════════════════════════ */
+  .portfolio-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 20px;
+  }
+  .eyebrow-line {
+    width: 24px; height: 2px;
+    background: var(--blue);
+    border-radius: 2px;
+  }
+
+  .section-h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(34px, 4.5vw, 58px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    /* color: var(--white); */
+    margin-bottom: 0;
+  }
+  .section-h2 em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--blue-bright), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .portfolio-header-right { max-width: 340px; }
+  .section-p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--gray-3);
+  }
+
+  /* ════════════════════════════════════════
+     GRID — primera card ocupa fila completa
+  ════════════════════════════════════════ */
+  .projects-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* ════════════════════════════════════════
+     PROJECT CARD
+  ════════════════════════════════════════ */
+  .project-card {
+    position: relative;
+    background: var(--ink-soft);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 28px;
+    overflow: hidden;
+    cursor: pointer;
+    transition:
+      transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      border-color 0.4s,
+      box-shadow 0.4s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,255,255,0.13);
+    box-shadow:
+      0 32px 80px rgba(0,0,0,0.4),
+      0 0 0 1px rgba(255,255,255,0.07),
+      0 0 120px -20px var(--card-accent, rgba(45,111,255,0.3));
+  }
+
+  /* Glow sweep on hover */
+  .project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% -10%, var(--card-accent, rgba(45,111,255,0.12)) 0%, transparent 65%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  .project-card:hover::after { opacity: 1; }
+
+  /* ── INNER LAYOUT ── */
+  .card-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Primera card: horizontal */
+  .project-card:first-child .card-inner {
+    flex-direction: row;
+    min-height: 360px;
+  }
+
+  /* ── VISUAL PANEL ── */
+  .card-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+
+  }
+
+  .project-card:first-child .card-visual {
+    width: 40%;
+    border-right: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .project-card:not(:first-child) .card-visual {
+    height: 220px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .card-orb {
+    position: absolute;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+    transition: opacity 0.4s, transform 0.4s;
+  }
+  .project-card:hover .card-orb { opacity: 0.55; transform: scale(1.18); }
+
+  /* Subtle grid texture */
+  .card-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Corner number */
+  .card-num {
+    position: absolute;
+    top: 18px; left: 20px;
+    z-index: 3;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.2);
+  }
+
+  /* Logo / icon container */
+  .card-logo-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ── LOGO IMAGE (desde uploads/logos/) ── */
+  .card-logo {
+    max-width: 200px;
+    max-height: 110px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: none;                 /* oculto hasta que cargue */
+    filter: drop-shadow(0 8px 32px rgba(0,0,0,0.55));
+    transition:
+      transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+      filter 0.45s;
+  }
+  .project-card:hover .card-logo {
+    transform: scale(1.09);
+    filter: drop-shadow(0 14px 44px rgba(0,0,0,0.65));
+  }
+
+  /* ── EMOJI FALLBACK ── */
+  .card-logo-fallback {
+    font-size: 68px;
+    line-height: 1;
+    filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative; z-index: 2;
+    display: none;                 /* se muestra solo si no hay logo */
+  }
+  .project-card:hover .card-logo-fallback { transform: scale(1.1) rotate(-5deg); }
+
+  /* "Ver capturas" pill on hover */
+  .card-hover-badge {
+    position: absolute;
+    bottom: 18px; right: 18px;
+    z-index: 3;
+    background: rgba(10,12,18,0.82);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
+  }
+  .project-card:hover .card-hover-badge { opacity: 1; transform: translateY(0); }
+
+  /* ── CONTENT PANEL ── */
+  .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 38px 44px;
+  }
+  .project-card:not(:first-child) .card-content { padding: 28px 32px; }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+
+  .ctag {
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: 0.05em;
+    border: 1px solid;
+  }
+  .ctag-blue   { background: rgba(45,111,255,0.12); color: #7aadff; border-color: rgba(45,111,255,0.28); }
+  .ctag-green  { background: rgba(51,87,173,0.1);   color: #3357ad; border-color: rgba(51,87,173,0.28); }
+  .ctag-purple { background: rgba(62,83,220,0.1);  color: #3e53dc; border-color: rgba(62,83,220,0.28); }
+  .ctag-red    { background: rgba(255,77,109,0.1);  color: #ff8099; border-color: rgba(255,77,109,0.28); }
+  .ctag-dark   { background: rgba(255,255,255,0.04); color: var(--gray-3); border-color: rgba(255,255,255,0.09); }
+
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .project-card:not(:first-child) .card-title { font-size: 22px; }
+
+  .card-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--gray-3);
+    flex: 1;
+    margin-bottom: 28px;
+  }
+  .project-card:not(:first-child) .card-desc { font-size: 14px; margin-bottom: 24px; }
+
+  /* Footer */
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    flex-wrap: wrap;
+  }
+
+  .card-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tech-pill {
+    padding: 5px 12px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gray-4);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .project-card:hover .tech-pill {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.12);
+    color: var(--gray-3);
+  }
+
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--gray-3);
+    text-decoration: none;
+    transition: color 0.2s, gap 0.25s;
+    white-space: nowrap;
+  }
+  .project-card:hover .card-cta { color: var(--white); gap: 13px; }
+  .card-cta svg { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .project-card:hover .card-cta svg { transform: translateX(3px); }
+
+  /* ════════════════════════════════════════
+     SKELETON
+  ════════════════════════════════════════ */
+  .skeleton-card {
+    border-radius: 28px;
+    background: var(--ink-soft);
+    border: 1px solid rgba(255,255,255,0.04);
+    overflow: hidden;
+  }
+  .skeleton-card:first-child { grid-column: 1 / -1; }
+
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--ink-soft) 0%,
+      rgba(46,51,68,0.55) 50%,
+      var(--ink-soft) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.9s ease-in-out infinite;
+  }
+  .sk-body { padding: 32px; display: flex; flex-direction: column; gap: 12px; }
+  .sk-line { height: 12px; border-radius: 6px; }
+  .sk-line.h { height: 20px; }
+  .sk-line.w30 { width: 30%; }
+  .sk-line.w55 { width: 55%; }
+  .sk-line.w80 { width: 80%; }
+  .sk-line.wfull { width: 100%; }
+
+  /* ════════════════════════════════════════
+     RESPONSIVE
+  ════════════════════════════════════════ */
+  @media (max-width: 900px) {
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card:first-child { grid-column: auto; }
+    .project-card:first-child .card-inner { flex-direction: column; min-height: auto; }
+    .project-card:first-child .card-visual {
+      width: 100%;
+      height: 200px;
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .section-inner { padding: 0 20px; }
+    .portfolio-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .card-content,
+    .project-card:first-child .card-content { padding: 24px; }
+    .card-title { font-size: 22px !important; }
+  }
+</style>
+
+<!-- ════════════════════════════════════════
+     PORTFOLIO SECTION HTML
+════════════════════════════════════════ -->
 <section class="s-portfolio" id="portafolio">
   <div class="section-inner">
+
     <div class="portfolio-header reveal">
-      <span class="section-eyebrow"><div class="eyebrow-line"></div>Portafolio</span>
-      <h2 class="section-h2">Proyectos reales,<br>resultados reales</h2>
-      <p class="section-p">Sistemas que hemos construido para resolver problemas reales en distintos sectores e industrias.</p>
+      <div class="portfolio-header-left">
+        <div class="section-eyebrow">
+          <div class="eyebrow-line"></div>Portafolio
+        </div>
+        <h2 class="section-h2">Proyectos reales,<br><em>resultados reales</em></h2>
+      </div>
+      <div class="portfolio-header-right">
+        <p class="section-p">Sistemas que hemos construido para resolver problemas reales en distintos sectores e industrias.</p>
+      </div>
     </div>
-    <div class="projects-grid stagger">
 
-      <!-- SmartOps -->
-      <div class="project-card">
-        <div class="project-visual pv-smartops">
-          <div class="pv-orb"></div>
-          <span class="pv-icon">⚡</span>
-        </div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="ptag ptag-blue">Automatización</span>
-            <span class="ptag ptag-dark">RBAC</span>
-            <span class="ptag ptag-dark">IoT</span>
-          </div>
-          <h3>SmartOps</h3>
-          <p>Plataforma completa para gestionar proyectos de automatización inteligente, dispositivos, tareas y operaciones con control de acceso por roles. Diseñada para equipos que operan infraestructura smart.</p>
-          <div class="project-footer">
-            <div class="tech-stack">
-              <span class="tech">React</span>
-              <span class="tech">Node.js</span>
-              <span class="tech">RBAC</span>
-            </div>
-            <a href="https://github.com/brxnzy/SmartOps" target="_blank" rel="noopener" class="project-link">Ver proyecto →</a>
-          </div>
+    <!-- Cards se inyectan aquí por JS -->
+    <div class="projects-grid stagger" id="projectsGrid">
+      <!-- Skeletons mientras carga el JSON -->
+      <div class="skeleton-card">
+        <div style="height:280px" class="shimmer"></div>
+        <div class="sk-body">
+          <div class="sk-line w30 shimmer"></div>
+          <div class="sk-line h w55 shimmer"></div>
+          <div class="sk-line wfull shimmer"></div>
+          <div class="sk-line w80 shimmer"></div>
         </div>
       </div>
-
-      <!-- Urbane -->
-      <div class="project-card">
-        <div class="project-visual pv-urbane">
-          <div class="pv-orb"></div>
-          <span class="pv-icon">🏘️</span>
-        </div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="ptag ptag-green">Gestión residencial</span>
-            <span class="ptag ptag-dark">Comunidades</span>
-          </div>
-          <h3>Urbane</h3>
-          <p>Plataforma para la gestión de comunidades residenciales de forma fácil y organizada. Centraliza comunicaciones, pagos, servicios y administración en un solo sistema accesible para todos los residentes.</p>
-          <div class="project-footer">
-            <div class="tech-stack">
-              <span class="tech">Web App</span>
-              <span class="tech">Dashboard</span>
-              <span class="tech">Notificaciones</span>
-            </div>
-            <a href="https://github.com/brxnzy/Urbane" target="_blank" rel="noopener" class="project-link">Ver proyecto →</a>
-          </div>
+      <div class="skeleton-card">
+        <div style="height:220px" class="shimmer"></div>
+        <div class="sk-body">
+          <div class="sk-line w30 shimmer"></div>
+          <div class="sk-line h w55 shimmer"></div>
+          <div class="sk-line wfull shimmer"></div>
         </div>
       </div>
-
-      <!-- U-Park -->
-      <div class="project-card">
-        <div class="project-visual pv-upark">
-          <div class="pv-orb"></div>
-          <span class="pv-icon">🚗</span>
-        </div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="ptag ptag-purple">App Móvil</span>
-            <span class="ptag ptag-dark">Parking</span>
-            <span class="ptag ptag-dark">Suscripciones</span>
-          </div>
-          <h3>U-Park</h3>
-          <p>Sistema móvil público para facilitar la búsqueda de estacionamientos en lugares públicos, con renta de garajes y suscripciones. Hace la vida más fácil a conductores en zonas urbanas concurridas.</p>
-          <div class="project-footer">
-            <div class="tech-stack">
-              <span class="tech">Mobile</span>
-              <span class="tech">Geolocation</span>
-              <span class="tech">Pagos</span>
-            </div>
-            <a href="https://github.com/NotGaabo/U-Park" target="_blank" rel="noopener" class="project-link">Ver proyecto →</a>
-          </div>
+      <div class="skeleton-card">
+        <div style="height:220px" class="shimmer"></div>
+        <div class="sk-body">
+          <div class="sk-line w30 shimmer"></div>
+          <div class="sk-line h w55 shimmer"></div>
+          <div class="sk-line wfull shimmer"></div>
         </div>
       </div>
-
-      <!-- POS -->
-      <div class="project-card">
-        <div class="project-visual pv-pos">
-          <div class="pv-orb"></div>
-          <span class="pv-icon">🏪</span>
-        </div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="ptag ptag-red">Punto de Venta</span>
-            <span class="ptag ptag-dark">Comercio</span>
-            <span class="ptag ptag-dark">Inventario</span>
-          </div>
-          <h3>Sistema POS</h3>
-          <p>Sistema completo de Punto de Venta construido con Python y Django. Gestión de ventas, inventario, clientes y reportes financieros para negocios físicos que necesitan control total de sus operaciones.</p>
-          <div class="project-footer">
-            <div class="tech-stack">
-              <span class="tech">Python</span>
-              <span class="tech">Django</span>
-              <span class="tech">SQLite</span>
-            </div>
-            <a href="https://github.com/angel1325t/Point-of-Sale-Sistem-with-Python-Django-POS-" target="_blank" rel="noopener" class="project-link">Ver proyecto →</a>
-          </div>
-        </div>
-      </div>
-
     </div>
+
   </div>
 </section>
 
+<!-- ════════════════════════════════════════
+     SCRIPT
+════════════════════════════════════════ -->
+<script>
+(function () {
+
+  const TAG_CLS = {
+    blue:   'ctag-blue',
+    green:  'ctag-green',
+    purple: 'ctag-purple',
+    red:    'ctag-red',
+    dark:   'ctag-dark',
+  };
+
+  // Paleta de fondos y orbs por proyecto
+  const VISUAL = {
+    smartops:   { bg: '#060f20',  orb: '#2D6FFF', accent: 'rgba(45,111,255,0.32)'  },
+    billnova:   { bg: '#041512',  orb: '#2c51a1', accent: 'rgba(44,81,161,0.28)'   },
+    schooltime: { bg: '#0e0618',  orb: '#3e54db', accent: 'rgba(62,84,219,0.28)'  },
+  };
+
+  function buildCard(p, index) {
+    const v = VISUAL[p.id] || VISUAL['smartops'];
+
+    const tagsHtml = (p.tags || []).map((tag, i) => {
+      const cls = TAG_CLS[p.tagColors?.[i]] || 'ctag-dark';
+      return `<span class="ctag ${cls}">${tag}</span>`;
+    }).join('');
+
+    const techHtml = (p.tech || []).map(t =>
+      `<span class="tech-pill">${t}</span>`
+    ).join('');
+
+    const numLabel = String(index + 1).padStart(2, '0');
+
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.style.setProperty('--card-accent', v.accent);
+    card.style.setProperty('--card-visual-bg', v.bg);
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Ver proyecto ${p.name}`);
+
+    card.innerHTML = `
+      <div class="card-inner">
+
+        <div class="card-visual">
+          <div class="card-orb" style="background:${v.orb}"></div>
+          <span class="card-num">${numLabel}</span>
+
+          <div class="card-logo-wrap">
+            ${p.logo
+              ? `<img class="card-logo" src="${p.logo}" alt="${p.name} logo" />`
+              : ''
+            }
+            <span class="card-logo-fallback">${p.icon || '🚀'}</span>
+          </div>
+
+          <span class="card-hover-badge">📸 Ver capturas</span>
+        </div>
+
+        <div class="card-content">
+          <div class="card-tags">${tagsHtml}</div>
+          <h3 class="card-title">${p.name}</h3>
+          <p class="card-desc">${p.description}</p>
+          <div class="card-footer">
+            <div class="card-tech">${techHtml}</div>
+            <span class="card-cta">
+              Ver proyecto
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    `;
+
+    // ── LOGO LOAD: usa p.logo si existe, si no muestra emoji ──
+    const imgEl      = card.querySelector('.card-logo');
+    const fallbackEl = card.querySelector('.card-logo-fallback');
+
+    if (imgEl) {
+      // El src ya está puesto en el HTML, solo manejamos onload / onerror
+      imgEl.onload  = () => {
+        imgEl.style.display      = 'block';
+        fallbackEl.style.display = 'none';
+      };
+      imgEl.onerror = () => {
+        // Si la ruta del JSON falla (archivo eliminado, etc.) → emoji
+        imgEl.style.display      = 'none';
+        fallbackEl.style.display = 'block';
+      };
+    } else {
+      // Sin logo en el JSON → mostrar emoji directamente
+      fallbackEl.style.display = 'block';
+    }
+
+    // Navegación al hacer click
+    const go = () => { window.location.href = `project.html?id=${p.id}`; };
+    card.addEventListener('click', go);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+    });
+
+    return card;
+  }
+
+  fetch('projects.json')
+    .then(r => r.json())
+    .then(data => {
+      const grid = document.getElementById('projectsGrid');
+      grid.innerHTML = '';
+
+      data.projects.forEach((p, i) => {
+        const card = buildCard(p, i);
+
+        // Staggered entrance
+        card.style.opacity   = '0';
+        card.style.transform = 'translateY(28px)';
+        card.style.transition =
+          `opacity 0.55s ease ${90 + i * 140}ms,
+           transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94) ${90 + i * 140}ms`;
+
+        grid.appendChild(card);
+
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          card.style.opacity   = '1';
+          card.style.transform = 'translateY(0)';
+        }));
+      });
+    })
+    .catch(err => {
+      console.warn('[Portfolio] Error cargando projects.json:', err);
+    });
+
+})();
+</script>
 <!-- ── PROCESS ── -->
 <section class="s-process" id="proceso">
   <div class="section-inner">
